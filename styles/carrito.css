@@ -1,0 +1,79 @@
+.carrito > h2 {
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+.productos-carrito {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+}
+
+.producto-card {
+    display: grid;
+    grid-template-columns: fit-content(50%) 1fr 2fr auto;
+    text-align: center;
+    background-color: var(--color-fondo);
+    border-radius: 10px;
+    padding: 1em;
+    margin: 1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+    position: relative;
+    min-width: 200px;
+    min-height: 100px;
+}
+
+.cuerpo-card {
+    text-align: justify;
+    margin-left: 1em;
+    margin-right: 1em;
+    align-content: center;
+}
+
+.imagen-card {
+    width: 20%;
+    height: auto;
+    border-radius: 10px;
+    align-content: center;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.imagen-card > img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ajustar imagen sin deformarla */
+}
+
+.botonera-card {
+    text-align: justify;
+    margin-left: 1em;
+    margin-right: 1em;
+    align-content: center;
+}
+
+.precio-card {
+    margin-left: 1em;
+    margin-right: 1em;
+    align-content: center;
+    text-align: end;
+}
+
+.total-carrito {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    background-color: var(--color-fondo);
+    border-radius: 10px;
+    
+    padding: 1em;
+    margin: 1em;
+}
+
+.cuerpo-total-carrito {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+}
