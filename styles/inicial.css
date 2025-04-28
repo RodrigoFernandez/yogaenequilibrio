@@ -7,4 +7,6 @@
 
 .destacados {
     background-color: var(--color-fondo-section);
+    margin-left: 1em;
+    margin-right: 1em;
 }

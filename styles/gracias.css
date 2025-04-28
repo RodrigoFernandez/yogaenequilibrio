@@ -1,0 +1,9 @@
+.contacto {
+    display: grid;
+    background-color: var(--color-fondo-section);
+}
+
+.agradecimiento {
+    margin: 2em;
+    padding: 2em;
+}
