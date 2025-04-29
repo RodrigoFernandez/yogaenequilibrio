@@ -20,6 +20,13 @@
     transition: transform 0.2s;
 }
 
+.boton-eliminar-td {
+    text-align: center;
+    width: 10%;
+    padding: 0.5em;
+    margin: 0.5em;
+}
+
 .producto-card {
     background-color: var(--color-fondo);
     border-radius: 10px;
@@ -39,21 +46,27 @@
 }
 
 .imagen-card {
-    
+    text-align: center;
+    width: 20%;
+    padding: 0.5em;
+    margin: 0.5em;
 }
 
 .imagen-card > img {
     width: 10%;
     height: auto;
+}
+
+.descripcion-card-td {
+    text-align: left;
     padding: 0.5em;
     margin: 0.5em;
 }
 
-.botonera-card {
-    text-align: justify;
-    margin-left: 1em;
-    margin-right: 1em;
-    align-content: center;
+.precio-card-td {
+    text-align: right;
+    padding: 0.5em;
+    margin: 0.5em;
 }
 
 .precio-card {
