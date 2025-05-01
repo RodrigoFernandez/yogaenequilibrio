@@ -48,8 +48,24 @@
                             <p>Precio: $10.00</p>
                         </div>
                         <div class="botonera-card">
-                            <button type="button" class="boton">Agregar al carrito</button>
+                            <button type="button" class="boton" onclick="window.modal.showModal()">Agregar al carrito</button>
                         </div>
+                        <dialog id="modal" class="modal-producto">
+                            <div class="imagen-card">
+                                <img src="../img/productos/almohadilla_001.jpg" alt="Almohadilla 1">
+                            </div>
+                            <div class="cuerpo-card">
+                                <h3>Almohadilla 1</h3>                            
+                                <p class="descripcion-cuerpo-card">Descripción del Almohadilla 1.</p>
+                                <p>Precio: $10.00</p>
+                                <input type="number" class="cantidad" placeholder="Cantidad" min="1" max="10">
+                                <p class="total">Total: $10.00</p>
+                            </div>
+                            <div class="botonera-card">
+                                <button type="button" class="boton">Agregar</button>
+                                <button type="button" class="boton" onclick="window.modal.close()">Cancelar</button>
+                            </div>
+                        </dialog>
                     </article>
                     <article class="producto-card">
                         <div class="imagen-card">

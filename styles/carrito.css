@@ -63,7 +63,7 @@
     margin: 0.5em;
 }
 
-.precio-card-td {
+.precio-card-td, .total-card-td {
     text-align: right;
     padding: 0.5em;
     margin: 0.5em;

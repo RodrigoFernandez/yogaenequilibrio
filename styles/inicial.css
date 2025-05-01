@@ -1,12 +1,92 @@
-.ofertas {
+.novedades {
     background-color: var(--color-fondo-section);
-    margin-left: 1em;
-    margin-right: 1em;
-    
+    margin-left: 10em;
+    margin-right: 10em;
+    margin-top: 5em;
 }
 
 .destacados {
     background-color: var(--color-fondo-section);
-    margin-left: 1em;
-    margin-right: 1em;
+    margin-left: 10em;
+    margin-right: 10em;
+    margin-top: 4em;
+    margin-bottom: 5em;
+}
+
+.imagenes-grilla {
+    --num-cols: 4;
+    --row-height: 18em;
+
+    box-sizing: border-box;
+    padding: 1em;
+    display: grid;
+    grid-template-columns: repeat(var(--num-cols), 1fr);
+    grid-auto-rows: var(--row-height);
+    gap: 1em;
+}
+
+.imagenes-grilla > a > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5em;
+    background-color: var(--color-fondo-header-footer);
+    border: 0.2em solid var(--color-fondo-header-footer);
+    
+}
+
+.imagen-grid-info {
+    /*background-image: url("../img/productos/almohadilla_001.jpg");*/
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5em;
+    border: 0.2em solid var(--color-fondo-header-footer);
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+a:hover > .imagen-grid-info {
+    border: 0.4em solid var(--color-fondo-header-footer);
+}
+
+.imagen-grid-info-descripcion {
+    padding-top: 5em;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 0.5em;
+    color: var(--color-fondo);
+    background: linear-gradient(to top, var(--color-texto), rgba(2, 2, 2, 0));
+    display: flex;
+    flex-direction: column;
+}
+
+.imagen-grid-info-descripcion > p {
+    font-size: 0.7em;
+}
+
+.imagen-grid-row-2 > .imagen-grid-info > .imagen-grid-info-descripcion {
+    padding-top: 15em;
+}
+
+.imagen-grid-row-2 > .imagen-grid-info > .imagen-grid-info-descripcion > p {
+    font-size: 0.8em;
+}
+
+.imagen-grid-col-2 {
+    grid-column: span 2;
+}
+
+.imagen-grid-row-2 {
+    grid-row: span 2;
+}
+
+@media screen and (max-width: 768px) {
+    .imagenes-grilla {
+        --num-cols: 4;
+        --row-height: 12em;
+    }
+    
 }
