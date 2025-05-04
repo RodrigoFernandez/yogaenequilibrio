@@ -23,8 +23,7 @@ El sitio consta de las siguientes secciones:
 --color-texto: #3B3B3B;
 --color-texto-error: #FF6B6B;
 --color-fondo: #FDFDFD;
---color-fondo-header-footer: 
-#CDB4DB;
+--color-fondo-header-footer: #CDB4DB;
 --color-fondo-section: #D8A7B1;
 --color-fondo-boton: #F6E7D7;
 --color-fondo-card: #C4BDBA;
