@@ -65,14 +65,13 @@
     background-color: var(--color-fondo-section);
     margin-left: 10em;
     margin-right: 10em;
-    margin-top: 4em;
     margin-bottom: 5em;
 }
 
 .productos-destacados {
     display: flex;
     width: 100%;
-    height: 25em;
+    height: 35em;
     padding: 1em;
     box-sizing: border-box;
 }
@@ -82,7 +81,6 @@
     overflow: hidden;
     margin: 0.5em;
     box-shadow: 0 1em 1.5em #000;
-    line-height: 0;
     transition: all 600ms;
     border-radius: 0.5em;
 }
@@ -94,17 +92,28 @@
 
 .destacados-box > a > img {
     width: 200%;
-    height: calc(100% - 3em);
+    height: calc(100% - 4em);
     object-fit: cover;
     transition: all 300ms;
 }
 
-.destacados-box > a > span {
-    display: block;
+.destacados-box > a > div {
+    color: var(--color-texto);
+    display: flex;
+    flex-direction: column;
+    height: 4em;
+}
+
+.destacados-box > a > div > h3 {
+    margin-top: 0.5em;
+    margin-bottom: 0em;
+    padding-left: 0.5em;
+}
+
+.destacados-box > a > div > p {
+    font-size: 0.7em;
     text-align: center;
-    height: 3em;
-    line-height: 1em;
-    margin: 1em;
+    margin-top: 0.5em;
 }
 
 .destacados-box:hover {
@@ -113,5 +122,4 @@
 
 .destacados-box:hover img {
     width: 100%;
-    height: 100%;
 }
