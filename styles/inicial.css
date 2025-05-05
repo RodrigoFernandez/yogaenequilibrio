@@ -19,6 +19,7 @@
     margin: 0.5em;
     box-shadow: 0 1em 1.5em #000;
     transition: all 600ms;
+    border-radius: 0.5em;
 }
 
 .novedades-box > a {
@@ -83,6 +84,7 @@
     box-shadow: 0 1em 1.5em #000;
     line-height: 0;
     transition: all 600ms;
+    border-radius: 0.5em;
 }
 
 .destacados-box > a {
