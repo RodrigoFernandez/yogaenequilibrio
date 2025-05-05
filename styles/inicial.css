@@ -5,6 +5,61 @@
     margin-top: 5em;
 }
 
+.productos-novedades {
+    display: flex;
+    width: 100%;
+    height: 35em;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.novedades-box {
+    flex: 1;
+    overflow: hidden;
+    margin: 0.5em;
+    box-shadow: 0 1em 1.5em #000;
+    transition: all 600ms;
+}
+
+.novedades-box > a {
+    text-decoration: none;
+    color: var(--color-texto);
+}
+
+.novedades-box > a > img {
+    width: 200%;
+    height: calc(100% - 4em);
+    object-fit: cover;
+    transition: all 300ms;
+}
+
+.novedades-box > a > div {
+    color: var(--color-texto);
+    display: flex;
+    flex-direction: column;
+    height: 4em;
+}
+
+.novedades-box > a > div > h3 {
+    margin-top: 0.5em;
+    margin-bottom: 0em;
+    padding-left: 0.5em;
+}
+
+.novedades-box > a > div > p {
+    font-size: 0.7em;
+    text-align: center;
+    margin-top: 0.5em;
+}
+
+.novedades-box:hover {
+    flex: 50%;
+}
+
+.novedades-box:hover img {
+    width: 100%;
+}
+
 .destacados {
     background-color: var(--color-fondo-section);
     margin-left: 10em;
@@ -13,80 +68,48 @@
     margin-bottom: 5em;
 }
 
-.imagenes-grilla {
-    --num-cols: 4;
-    --row-height: 18em;
-
-    box-sizing: border-box;
+.productos-destacados {
+    display: flex;
+    width: 100%;
+    height: 25em;
     padding: 1em;
-    display: grid;
-    grid-template-columns: repeat(var(--num-cols), 1fr);
-    grid-auto-rows: var(--row-height);
-    gap: 1em;
+    box-sizing: border-box;
 }
 
-.imagenes-grilla > a > img {
-    width: 100%;
-    height: 100%;
+.destacados-box {
+    flex: 1;
+    overflow: hidden;
+    margin: 0.5em;
+    box-shadow: 0 1em 1.5em #000;
+    line-height: 0;
+    transition: all 600ms;
+}
+
+.destacados-box > a {
+    text-decoration: none;
+    color: var(--color-texto);
+}
+
+.destacados-box > a > img {
+    width: 200%;
+    height: calc(100% - 3em);
     object-fit: cover;
-    border-radius: 0.5em;
-    background-color: var(--color-fondo-header-footer);
-    border: 0.2em solid var(--color-fondo-header-footer);
-    
+    transition: all 300ms;
 }
 
-.imagen-grid-info {
-    /*background-image: url("../img/productos/almohadilla_001.jpg");*/
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.destacados-box > a > span {
+    display: block;
+    text-align: center;
+    height: 3em;
+    line-height: 1em;
+    margin: 1em;
+}
+
+.destacados-box:hover {
+    flex: 50%;
+}
+
+.destacados-box:hover img {
     width: 100%;
     height: 100%;
-    border-radius: 0.5em;
-    border: 0.2em solid var(--color-fondo-header-footer);
-    display: flex;
-    flex-direction: column-reverse;
-}
-
-a:hover > .imagen-grid-info {
-    border: 0.4em solid var(--color-fondo-header-footer);
-}
-
-.imagen-grid-info-descripcion {
-    padding-top: 5em;
-    padding-left: 2em;
-    padding-right: 2em;
-    padding-bottom: 0.5em;
-    color: var(--color-fondo);
-    background: linear-gradient(to top, var(--color-texto), rgba(2, 2, 2, 0));
-    display: flex;
-    flex-direction: column;
-}
-
-.imagen-grid-info-descripcion > p {
-    font-size: 0.7em;
-}
-
-.imagen-grid-row-2 > .imagen-grid-info > .imagen-grid-info-descripcion {
-    padding-top: 15em;
-}
-
-.imagen-grid-row-2 > .imagen-grid-info > .imagen-grid-info-descripcion > p {
-    font-size: 0.8em;
-}
-
-.imagen-grid-col-2 {
-    grid-column: span 2;
-}
-
-.imagen-grid-row-2 {
-    grid-row: span 2;
-}
-
-@media screen and (max-width: 768px) {
-    .imagenes-grilla {
-        --num-cols: 4;
-        --row-height: 12em;
-    }
-    
 }
