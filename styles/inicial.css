@@ -123,3 +123,53 @@
 .destacados-box:hover img {
     width: 100%;
 }
+
+@media (max-width: 768px) {
+    .novedades,
+    .destacados {
+        margin-left: 5em;
+        margin-right: 5em;
+        margin-top: 2.5em;
+    }
+
+    .productos-novedades,
+    .productos-destacados {
+        flex-direction: column; /* Cambia de horizontal a vertical */
+        height: auto;
+    }
+
+    .novedades-box,
+    .destacados-box {
+        margin: 0.25em;
+    }
+
+    .novedades-box > a > img,
+    .destacados-box > a > img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .novedades,
+    .destacados {
+        margin-left: 1em;
+        margin-right: 1em;
+        margin-top: 0.5em;
+    }
+
+    .productos-novedades,
+    .productos-destacados {
+        display: block; /* Cambia a diseño en bloque */
+    }
+
+    .novedades-box,
+    .destacados-box {
+        width: 100%; /* Asegura que cada caja ocupe el ancho completo */
+        margin: 0.5em 0; /* Espaciado vertical entre cajas */
+    }
+
+    .novedades-box > a > img,
+    .destacados-box > a > img {
+        width: 100%;
+    }
+}
