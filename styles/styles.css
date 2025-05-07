@@ -26,6 +26,10 @@ h1, h2, h3, h4, h5, h6 {
 header {
     background-color: var(--color-fondo-header-footer);
     color: var(--color-texto);
+    /*
+    position: sticky;
+    top: 0px;
+    */
 }
 
 .cabecera > .encabezado-cabecera {
@@ -149,6 +153,8 @@ header {
 }
 
 .footer-redes {
+    display: flex;
+    justify-content: center;
     background-color: var(--color-fondo-header-footer);
     color: var(--color-texto);
     padding: 20px;
@@ -180,6 +186,30 @@ header {
 }
 
 @media (max-width: 768px) {
+    .cabecera > .encabezado-cabecera {
+        grid-template-columns: 2fr;
+        text-align: center;
+    }
+
+    .encabezado-cabecera > .titulo > h1 {
+        font-size: 2em;
+        margin-top: 0.2em;
+        margin-bottom: 0.1em;
+    }
+    
+    .encabezado-cabecera > .titulo > p {
+        font-style: italic;
+        font-size: 0.7em;
+        margin-top: 0.1em;
+        margin-bottom: 0.1em;
+    }
+
+    .logo > a > img {
+        width: 150px;
+        height: auto;
+        margin: 0.25em;
+    }
+
     .menu ul {
         display: none;
         flex-direction: column;
@@ -192,7 +222,9 @@ header {
 
     .menu-hamburguesa {
         display: block;
-    }
+        padding-top: 0.3em;
+        padding-bottom: 0.3em;
+    }   
 
     .menu-toggle:checked + .menu-hamburguesa + ul {
         display: flex;
@@ -200,6 +232,29 @@ header {
 }
 
 @media (max-width: 480px) {
+    .cabecera > .encabezado-cabecera {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .encabezado-cabecera > .titulo > h1 {
+        font-size: 2em;
+        margin-top: 0.1em;
+        margin-bottom: 0.05em;
+    }
+    
+    .encabezado-cabecera > .titulo > p {
+        margin-top: 0.01em;
+        margin-bottom: 0.01em;
+        font-size: 0.6em;
+    }
+
+    .logo > a > img {
+        width: 100px;
+        height: auto;
+        margin: 0.1em;
+    }
+
     .menu ul {
         display: none;
         flex-direction: column;
@@ -212,6 +267,8 @@ header {
 
     .menu-hamburguesa {
         display: block;
+        padding-top: 0.2em;
+        padding-bottom: 0.2em;
     }
 
     .menu-toggle:checked + .menu-hamburguesa + ul {

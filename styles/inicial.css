@@ -2,7 +2,7 @@
     background-color: var(--color-fondo-section);
     margin-left: 10em;
     margin-right: 10em;
-    margin-top: 5em;
+    margin-top: 2em;
 }
 
 .productos-novedades {
@@ -65,6 +65,7 @@
     background-color: var(--color-fondo-section);
     margin-left: 10em;
     margin-right: 10em;
+    margin-top: 2em;
     margin-bottom: 5em;
 }
 
@@ -129,7 +130,11 @@
     .destacados {
         margin-left: 5em;
         margin-right: 5em;
-        margin-top: 2.5em;
+        margin-top: 1em;
+    }
+
+    .destacados {
+        margin-bottom: 2.5em;
     }
 
     .productos-novedades,
@@ -155,6 +160,10 @@
         margin-left: 1em;
         margin-right: 1em;
         margin-top: 0.5em;
+    }
+
+    .destacados {
+        margin-bottom: 2.5em;
     }
 
     .productos-novedades,

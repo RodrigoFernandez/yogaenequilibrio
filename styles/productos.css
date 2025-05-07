@@ -62,3 +62,17 @@
 .botonera-card > button {
     text-align: center;
 }
+
+
+@media (max-width: 768px) {
+    .listado-productos {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .listado-productos {
+        grid-template-columns: 1fr;
+    }
+}
+
