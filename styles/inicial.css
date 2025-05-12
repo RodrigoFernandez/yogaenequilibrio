@@ -125,7 +125,7 @@
     width: 100%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48em) {
     .novedades,
     .destacados {
         margin-left: 5em;
@@ -154,7 +154,7 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 30em) {
     .novedades,
     .destacados {
         margin-left: 1em;

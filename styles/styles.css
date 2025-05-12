@@ -185,7 +185,7 @@ header {
     font-size: 0.75em;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48em) {
     .cabecera > .encabezado-cabecera {
         grid-template-columns: 2fr;
         text-align: center;
@@ -231,7 +231,7 @@ header {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 30em) {
     .cabecera > .encabezado-cabecera {
         grid-template-columns: 1fr;
         text-align: center;

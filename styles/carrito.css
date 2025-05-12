@@ -92,3 +92,83 @@
     grid-template-columns: 1fr 1fr;
     justify-content: center;
 }
+
+@media  (max-width: 48em) {
+    .productos-carrito-table {
+        width: 100%;
+    }
+
+    .productos-carrito-table tr {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .producto-card {
+        padding: 0.5em;
+        margin: 0.5em;
+    }
+
+    .descripcion-card-td {
+        padding: 0.25em;
+        margin: 0.25em;
+        text-align: left;
+    }
+
+    .precio-card-td, .total-card-td {
+        padding: 0.25em;
+        margin: 0.25em;
+    }
+
+    .precio-card-td {
+        text-align: center;
+    }
+    
+    .precio-card {
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+    }
+
+    .imagen-card {
+        display: none;
+    }
+}
+
+@media (max-width: 30em) {
+    .productos-carrito-table {
+        width: 100%;
+    }
+
+    .productos-carrito-table tr {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .producto-card {
+        padding: 0.3em;
+        margin: 0.3em;
+    }
+
+    .descripcion-card-td {
+        padding: 0.1em;
+        margin: 0.1em;
+        text-align: left;
+    }
+
+    .precio-card-td, .total-card-td {
+        padding: 0.1em;
+        margin: 0.1em;
+    }
+    
+    .precio-card-td {
+        text-align: center;
+    }
+
+    .precio-card {
+        margin-left: 0.3em;
+        margin-right: 0.3em;
+    }
+
+    .imagen-card {
+        display: none;
+    }
+}
