@@ -8,6 +8,8 @@
     display: grid;
     grid-template-columns: 1fr;
     justify-content: center;
+    margin-left: 5em;
+    margin-right: 5em;
 }
 
 .productos-carrito-table {
@@ -83,8 +85,16 @@
     background-color: var(--color-fondo);
     border-radius: 10px;
     
-    padding: 1em;
-    margin: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 6em;
+    margin-right: 6em;
+}
+
+.total-carrito > button {
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: 1em;
 }
 
 .cuerpo-total-carrito {
@@ -94,13 +104,13 @@
 }
 
 @media  (max-width: 48em) {
-    .productos-carrito-table {
-        width: 100%;
+    .productos-carrito {
+        margin-left: 0.2em;
+        margin-right: 0.2em;
     }
 
-    .productos-carrito-table tr {
-        display: flex;
-        flex-direction: column;
+    .productos-carrito-table {
+        width: 100%;
     }
 
     .producto-card {
@@ -119,21 +129,43 @@
         margin: 0.25em;
     }
 
+    .total-card-td {
+        padding-right: 0.5em;
+    }
+
     .precio-card-td {
         text-align: center;
     }
     
     .precio-card {
         margin-left: 0.5em;
-        margin-right: 0.5em;
+        margin-right: 1em;
     }
 
     .imagen-card {
         display: none;
     }
+
+    .total-carrito {
+        margin-top: 0.2em;
+        margin-bottom: 0.2em;
+        margin-left: 1.2em;
+        margin-right: 1.2em;
+    }
+    
+    .total-carrito > button {
+        margin-left: 1em;
+        margin-right: 1em;
+        margin-bottom: 0.5em;
+    }
 }
 
 @media (max-width: 30em) {
+    .productos-carrito {
+        margin-left: 0.1em;
+        margin-right: 0.1em;
+    }
+
     .productos-carrito-table {
         width: 100%;
     }
@@ -151,7 +183,7 @@
     .descripcion-card-td {
         padding: 0.1em;
         margin: 0.1em;
-        text-align: left;
+        text-align: center;
     }
 
     .precio-card-td, .total-card-td {
@@ -159,16 +191,33 @@
         margin: 0.1em;
     }
     
+    .total-card-td {
+        padding-right: 0.2em;
+    }
+
     .precio-card-td {
         text-align: center;
     }
 
     .precio-card {
         margin-left: 0.3em;
-        margin-right: 0.3em;
+        margin-right: 0.5em;
     }
 
     .imagen-card {
         display: none;
+    }
+
+    .total-carrito {
+        margin-top: 0.1em;
+        margin-bottom: 0.1em;
+        margin-left: 1.1em;
+        margin-right: 1.1em;
+    }
+    
+    .total-carrito > button {
+        margin-left: 1em;
+        margin-right: 1em;
+        margin-bottom: 0.5em;
     }
 }
