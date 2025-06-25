@@ -1,7 +1,7 @@
 function agregarProductoACarrito(producto, cantidad){
-    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
     if(cantidad > 0){
+        let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
         let itemExistente = carrito.find(item => item.productoId === producto.id);
 
         if (itemExistente) {

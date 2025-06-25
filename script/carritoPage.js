@@ -1,7 +1,29 @@
+
+
+function eliminarItemCarrito(itemId){
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    
+    // Filtrar el carrito para eliminar el item con el id especificado
+    carrito = carrito.filter(item => item.productoId != itemId);
+    
+    // Actualizar el localStorage con el nuevo carrito
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+
+    actualizarCarrito(); // Actualizar la vista del carrito
+}
+
 function crearCeldaBotonEliminar(item){
     let celda = document.createElement("td");
     celda.className = "boton-eliminar-td";
     celda.innerHTML = `<button type="button" class="boton boton-error">Eliminar</button>`;
+
+    let boton = celda.getElementsByTagName("button")[0];
+    boton.setAttribute("item-id", item.productoId);
+
+    boton.addEventListener("click", (evento) => {
+        eliminarItemCarrito(evento.target.getAttribute("item-id"));
+    });
+
     return celda;
 }
 
@@ -26,6 +48,30 @@ function crearCeldaPrecio(item){
     return celda;
 }
 
+function actualizarTotalCarrito(){
+    let totalesItems = document.querySelectorAll(".total-card-td p");
+    
+    totalCarrito = [...totalesItems]
+                    .map(total => parseFloat(total.innerText.replace("$", "")))
+                    .reduce((acumulador, total) => acumulador + total, 0)
+                    .toFixed(2);
+
+    let precioTotal = document.getElementById("precioTotal");
+    precioTotal.innerHTML = `<p>$${totalCarrito}</p>`;
+};
+
+function actualizarTotalItem(evento){
+    let tdCantidad = evento.target.parentElement;
+    
+    let tdPrecio = tdCantidad.previousElementSibling;
+    let precio = parseFloat(tdPrecio.children[0].innerText.replace("$", ""));
+        
+    let tdTotal = tdCantidad.nextElementSibling;
+    tdTotal.innerHTML = `<p>$${(precio * evento.target.value).toFixed(2)}</p>`;
+
+    actualizarTotalCarrito();
+};
+
 function crearCeldaCantidad(item){
     let celda = document.createElement("td");
     celda.className = "precio-card-td";
@@ -33,7 +79,9 @@ function crearCeldaCantidad(item){
         <label for="cantidad">Cantidad: </label>
         <input type="number" name="cantidad" value="${item.cantidad}" min="1" max="10">
     `;
-    //agregar evento para actualizar el total del item, y el total del carrito
+
+    celda.getElementsByTagName("input")[0].addEventListener("change", actualizarTotalItem);
+
     return celda;
 }
 
@@ -45,7 +93,6 @@ function crearCeldaTotal(item){
 }
 
 function crearItemCarrito(item){
-    console.log(item);
     let fila = document.createElement("tr");
     fila.className = "producto-card";
 
@@ -61,10 +108,8 @@ function crearItemCarrito(item){
 
 function actualizarCarrito(){
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-    console.log(carrito);
-
     let itemsCarrito = document.getElementById("itemsCarrito");
-    console.log(itemsCarrito);
+    
     if(itemsCarrito) {
         itemsCarrito.innerHTML = ""; // Limpiar el contenido previo
 
@@ -77,6 +122,7 @@ function actualizarCarrito(){
             });
         }
     }
+    actualizarTotalCarrito()
 }
 
 document.addEventListener("DOMContentLoaded", actualizarCarrito);
