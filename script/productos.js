@@ -65,6 +65,15 @@ function getCuerpoCard(producto) {
     return cuerpoCard;
 }
 
+function agregarACarrito(idProducto) {
+    let dialog = document.getElementById(`modal-${idProducto}`);
+    let producto = JSON.parse(dialog.getAttribute("data-producto"));
+    let cantidad = document.getElementById(`cantidad-${idProducto}`);
+    
+    agregarProductoACarrito(producto, cantidad.value);
+    dialog.close();
+}
+    
 function getDialogProducto(producto) {
     let dialog = document.createElement("dialog");
     dialog.id = `modal-${producto.id}`;
@@ -72,13 +81,15 @@ function getDialogProducto(producto) {
 
     dialog.appendChild(getImagenCard(producto));
     dialog.appendChild(getCuerpoCard(producto));
-
+    dialog.setAttribute("data-producto", JSON.stringify(producto));
+    
     dialog.innerHTML += `<div class="botonera-card">
-                            <button type="button" class="boton">Agregar</button>
+                            <button type="button" class="boton" onclick="agregarACarrito('${producto.id}')">Agregar</button>
                             <button type="button" class="boton" onclick="document.getElementById('${dialog.id}').close()">Cancelar</button>
                         </div>`;
     return dialog;
 }
+
 function getNuevoProducto(producto) {
     let productoArticle = document.createElement("article");
     productoArticle.className = "producto-card";
