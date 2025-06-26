@@ -1,15 +1,26 @@
+function abrirDialogoNovedadDestacado(evento) {
+    let enlace = evento.target.closest("a");
+    let productoId = enlace.getAttribute("producto-id");
+    console.log("Producto ID:", productoId);
+    console.log("mostrar dialog como el de productos");
+};
 
+function getEnlaceNovedadDestacado(producto) {
+    let enlace = document.createElement("a");
+    enlace.innerHTML = `<img src="${producto.imagen}" alt="${producto.nombre}">
+                        <div >
+                            <h3>${producto.nombre}</h3>
+                            <p>${producto.descripcion}</p>
+                        </div>`;
+    enlace.setAttribute("producto-id", producto.id);
+    enlace.addEventListener("click", abrirDialogoNovedadDestacado);
+    return enlace;
+}
 
 function getNuevaNovedad(producto){
     let novedadDiv = document.createElement("div");
     novedadDiv.className = "novedades-box";
-    novedadDiv.innerHTML = `<a href="">
-                                <img src="${producto.imagen}" alt="${producto.nombre}">
-                                <div >
-                                    <h3>${producto.nombre}</h3>
-                                    <p>${producto.descripcion}</p>
-                                </div>
-                            </a>`;
+    novedadDiv.appendChild(getEnlaceNovedadDestacado(producto));
     return novedadDiv;
 }
 
@@ -22,16 +33,10 @@ function cargarNovedades(novedades) {
 
 
 function getNuevoDestacado(producto){
-    let novedadDiv = document.createElement("div");
-    novedadDiv.className = "destacados-box";
-    novedadDiv.innerHTML = `<a href="">
-                                <img src="${producto.imagen}" alt="${producto.nombre}">
-                                <div >
-                                    <h3>${producto.nombre}</h3>
-                                    <p>${producto.descripcion}</p>
-                                </div>
-                            </a>`;
-    return novedadDiv;
+    let destacadoDiv = document.createElement("div");
+    destacadoDiv.className = "destacados-box";
+    destacadoDiv.appendChild(getEnlaceNovedadDestacado(producto));
+    return destacadoDiv;
 }
 
 function cargarDestacados(destacados) {
@@ -43,12 +48,9 @@ function cargarDestacados(destacados) {
 
 ///////////////////////////////////////////////////////////
 function inicializacion() {
-// Código a ejecutar cuando el DOM esté completamente cargado
+    // Código a ejecutar cuando el DOM esté completamente cargado
     let novedades = getNovedades();
     let destacados = getDestacados();
-
-    console.log("Novedades:", novedades);
-    console.log("Destacados:", destacados);
 
     cargarNovedades(novedades);
     cargarDestacados(destacados);

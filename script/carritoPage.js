@@ -125,4 +125,12 @@ function actualizarCarrito(){
     actualizarTotalCarrito()
 }
 
-document.addEventListener("DOMContentLoaded", actualizarCarrito);
+document.addEventListener("DOMContentLoaded", function(){
+    actualizarCarrito();
+
+    let finalizarCompraBtn = document.getElementById('finalizarCompraBtn');
+    finalizarCompraBtn.addEventListener("click", (evento) => {
+        console.log(evento);
+        console.log("mostrar formulario para cargar datos del usuario para la compra");
+    });
+});
