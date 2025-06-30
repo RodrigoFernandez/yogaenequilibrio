@@ -22,32 +22,32 @@
     border-radius: 0.5em;
 }
 
-.novedades-box > a {
+.novedades-box > .enlace-producto {
     text-decoration: none;
     color: var(--color-texto);
 }
 
-.novedades-box > a > img {
+.novedades-box > .enlace-producto > img {
     width: 200%;
     height: calc(100% - 4em);
     object-fit: cover;
     transition: all 300ms;
 }
 
-.novedades-box > a > div {
+.novedades-box > .enlace-producto > div {
     color: var(--color-texto);
     display: flex;
     flex-direction: column;
     height: 4em;
 }
 
-.novedades-box > a > div > h3 {
+.novedades-box > .enlace-producto > div > h3 {
     margin-top: 0.5em;
     margin-bottom: 0em;
     padding-left: 0.5em;
 }
 
-.novedades-box > a > div > p {
+.novedades-box > .enlace-producto > div > p {
     font-size: 0.7em;
     text-align: center;
     margin-top: 0.5em;
@@ -57,7 +57,7 @@
     flex: 50%;
 }
 
-.novedades-box:hover img {
+.novedades-box:hover > .enlace-producto > img {
     width: 100%;
 }
 
@@ -86,32 +86,32 @@
     border-radius: 0.5em;
 }
 
-.destacados-box > a {
+.destacados-box > .enlace-producto {
     text-decoration: none;
     color: var(--color-texto);
 }
 
-.destacados-box > a > img {
+.destacados-box > .enlace-producto > img {
     width: 200%;
     height: calc(100% - 4em);
     object-fit: cover;
     transition: all 300ms;
 }
 
-.destacados-box > a > div {
+.destacados-box > .enlace-producto > div {
     color: var(--color-texto);
     display: flex;
     flex-direction: column;
     height: 4em;
 }
 
-.destacados-box > a > div > h3 {
+.destacados-box > .enlace-producto > div > h3 {
     margin-top: 0.5em;
     margin-bottom: 0em;
     padding-left: 0.5em;
 }
 
-.destacados-box > a > div > p {
+.destacados-box > .enlace-producto > div > p {
     font-size: 0.7em;
     text-align: center;
     margin-top: 0.5em;
@@ -121,8 +121,12 @@
     flex: 50%;
 }
 
-.destacados-box:hover img {
+.destacados-box:hover > .enlace-producto > img {
     width: 100%;
+}
+
+dialog.modal-producto {
+    text-align: center;
 }
 
 @media (max-width: 48em) {
@@ -148,8 +152,8 @@
         margin: 0.25em;
     }
 
-    .novedades-box > a > img,
-    .destacados-box > a > img {
+    .novedades-box > .enlace-producto > img,
+    .destacados-box > .enlace-producto > img {
         width: 100%;
     }
 }
@@ -177,8 +181,8 @@
         margin: 0.5em 0; /* Espaciado vertical entre cajas */
     }
 
-    .novedades-box > a > img,
-    .destacados-box > a > img {
+    .novedades-box > .enlace-producto > img,
+    .destacados-box > .enlace-producto > img {
         width: 100%;
     }
 }

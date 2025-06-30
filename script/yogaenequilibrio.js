@@ -1,19 +1,19 @@
-function abrirDialogoNovedadDestacado(evento) {
-    let enlace = evento.target.closest("a");
-    let productoId = enlace.getAttribute("producto-id");
-    console.log("Producto ID:", productoId);
-    console.log("mostrar dialog como el de productos");
-};
-
 function getEnlaceNovedadDestacado(producto) {
     let enlace = document.createElement("a");
+    enlace.className = "enlace-producto";
     enlace.innerHTML = `<img src="${producto.imagen}" alt="${producto.nombre}">
                         <div >
                             <h3>${producto.nombre}</h3>
-                            <p>${producto.descripcion}</p>
                         </div>`;
     enlace.setAttribute("producto-id", producto.id);
-    enlace.addEventListener("click", abrirDialogoNovedadDestacado);
+
+    enlace.addEventListener("click", function(evento) {
+        document.getElementById(`cantidad-${producto.id}`).value = 1; // Resetear cantidad al abrir el modal
+        document.getElementById(`cantidad-${producto.id}`).removeEventListener('input', cantidadEventInput);
+        document.getElementById(`cantidad-${producto.id}`).addEventListener('input', cantidadEventInput);
+        document.getElementById(`modal-${producto.id}`).showModal();
+    });
+
     return enlace;
 }
 
@@ -21,6 +21,7 @@ function getNuevaNovedad(producto){
     let novedadDiv = document.createElement("div");
     novedadDiv.className = "novedades-box";
     novedadDiv.appendChild(getEnlaceNovedadDestacado(producto));
+    novedadDiv.appendChild(getDialogProducto(producto));
     return novedadDiv;
 }
 
@@ -31,11 +32,11 @@ function cargarNovedades(novedades) {
     });
 }
 
-
 function getNuevoDestacado(producto){
     let destacadoDiv = document.createElement("div");
     destacadoDiv.className = "destacados-box";
     destacadoDiv.appendChild(getEnlaceNovedadDestacado(producto));
+    destacadoDiv.appendChild(getDialogProducto(producto));
     return destacadoDiv;
 }
 
