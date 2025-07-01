@@ -132,5 +132,17 @@ document.addEventListener("DOMContentLoaded", function(){
     finalizarCompraBtn.addEventListener("click", (evento) => {
         console.log(evento);
         console.log("mostrar formulario para cargar datos del usuario para la compra");
+
+        document.getElementById(`finalizarCompraForm`).showModal();
     });
+
+    let cancelarConfirmacionBtn = document.getElementById('cancelarConfirmacionBtn');
+    cancelarConfirmacionBtn.addEventListener("click", (evento) => {
+        console.log(evento);
+        console.log("cierra formulario para cargar datos del usuario para la compra");
+
+        let dialogo = document.getElementById(`finalizarCompraForm`);
+        console.log(dialogo);
+        dialogo.close();
+    }); 
 });

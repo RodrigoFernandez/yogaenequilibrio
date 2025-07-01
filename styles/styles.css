@@ -185,6 +185,11 @@ header {
     font-size: 0.75em;
 }
 
+dialog {
+    border: 7px solid var(--color-fondo-header-footer);
+    border-radius: 10px;
+}
+
 @media (max-width: 48em) {
     .cabecera > .encabezado-cabecera {
         grid-template-columns: 2fr;
