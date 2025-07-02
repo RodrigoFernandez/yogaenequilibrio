@@ -57,6 +57,7 @@
                         </div>
                     </div>
                     <button type="button" class="boton" id="finalizarCompraBtn">Finalizar compra</button>
+
                     <dialog id="finalizarCompraForm">
                         <div>
                             <h3>Finalizar Compra</h3>
@@ -64,42 +65,20 @@
                             <div class="productos-fin-compra">
                                 <table class="productos-fin-compra-table">
                                     <tbody id="itemsFinCompra">
-                                        <tr>
-                                            <td>Producto1</td>
-                                            <td>Precio1</td>
-                                            <td>Cantidad1</td>
-                                            <td>Total1</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Producto2</td>
-                                            <td>Precio2</td>
-                                            <td>Cantidad2</td>
-                                            <td>Total2</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Producto3</td>
-                                            <td>Precio3</td>
-                                            <td>Cantidad3</td>
-                                            <td>Total3</td>
-                                        </tr>
                                     </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>Total compra</td>
-                                        </tr>
+                                    <tfoot id="footerFinCompra">
                                     </tfoot>
                                 </table>
                             </div>
-                            <form action="https://formspree.io/f/mjkwgkov" method="post">
+                            <form action="https://formspree.io/f/mwpbzoya" method="post">
                                 <div class="campos">
                                     <label for="nombre">Nombre:</label>
                                     <input type="text" id="nombre" name="nombre" required>
                                     
                                     <label for="email">Email:</label>
                                     <input type="email" id="email" name="email" required>
+
+                                    <input type="hidden" id="compra" name="compra">
                                 </div>
                                 <div class="botones">
                                     <button type="submit" class="boton" id="confirmarCompraBtn">Confirmar compra</button>

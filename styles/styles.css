@@ -98,8 +98,8 @@ header {
     color: var(--color-texto);
     font-family: var(--fuente-secundaria);
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.3125rem;
     cursor: pointer;
 }
 
@@ -109,6 +109,16 @@ header {
 
 .boton-error {
     color: var(--color-texto-error);
+}
+
+.boton-vaciar-carrito {
+    padding: 0.3125rem 1.25rem;
+    margin: 0.3125rem;
+}
+
+.boton-deshabilitado {
+    opacity: 0.5;
+    pointer-events: none;
 }
 
 .menu-toggle {
@@ -188,6 +198,10 @@ header {
 dialog {
     border: 7px solid var(--color-fondo-header-footer);
     border-radius: 10px;
+}
+
+.resaltado {
+    font-weight: bold;
 }
 
 @media (max-width: 48em) {

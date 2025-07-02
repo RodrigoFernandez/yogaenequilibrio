@@ -29,6 +29,10 @@
     margin: 0.5em;
 }
 
+.boton-vaciar-carrito-th {
+    text-align: right;
+}
+
 .producto-card {
     background-color: var(--color-fondo);
     border-radius: 10px;
@@ -101,6 +105,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: center;
+}
+
+#finalizarCompraForm > div > h3 {
+    margin-top: 0.5rem;
 }
 
 @media  (max-width: 48em) {

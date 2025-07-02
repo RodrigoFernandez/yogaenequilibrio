@@ -19,4 +19,18 @@ function agregarProductoACarrito(producto, cantidad){
         localStorage.setItem("carrito", JSON.stringify(carrito));
     }
 }
+
+function vaciarCarrito(){
+    localStorage.removeItem("carrito");
+}
+
+function actualizarItemCarrito(idItem, cantidad){
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
     
+    let itemExistente = carrito.find(item => item.productoId == idItem);
+    if (itemExistente) {
+        itemExistente.cantidad = cantidad;
+    }
+
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+};

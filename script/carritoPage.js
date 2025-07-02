@@ -68,7 +68,9 @@ function actualizarTotalItem(evento){
         
     let tdTotal = tdCantidad.nextElementSibling;
     tdTotal.innerHTML = `<p>$${(precio * evento.target.value).toFixed(2)}</p>`;
-
+    
+    let idItem = evento.target.getAttribute("item-id");
+    actualizarItemCarrito(idItem, evento.target.value);
     actualizarTotalCarrito();
 };
 
@@ -79,7 +81,7 @@ function crearCeldaCantidad(item){
         <label for="cantidad">Cantidad: </label>
         <input type="number" name="cantidad" value="${item.cantidad}" min="1" max="10">
     `;
-
+    celda.getElementsByTagName("input")[0].setAttribute("item-id", item.productoId);
     celda.getElementsByTagName("input")[0].addEventListener("change", actualizarTotalItem);
 
     return celda;
@@ -106,6 +108,42 @@ function crearItemCarrito(item){
     return fila;
 }
 
+function crearCeldaBotonVaciarCarrito(){
+    let celda = document.createElement("th");
+    celda.className = "boton-eliminar-td boton-vaciar-carrito-th";
+    celda.setAttribute("colspan", "6");
+    celda.innerHTML = `<button type="button" class="boton boton-error boton-vaciar-carrito">Vaciar carrito</button>`;
+
+    let boton = celda.getElementsByTagName("button")[0];
+
+    boton.addEventListener("click", (evento) => {
+        vaciarCarrito();
+        actualizarCarrito();
+    });
+
+    return celda;
+}
+
+function crearHeaderTablaCarrito(){
+    let headerFila = document.createElement("tr");
+    headerFila.className = "producto-card";
+    headerFila.appendChild(crearCeldaBotonVaciarCarrito());
+    
+    return headerFila;
+}
+
+function deshabilitarBotonFinalizarCompra(){
+    let finalizarCompraBtn = document.getElementById('finalizarCompraBtn');
+    finalizarCompraBtn.disabled = true;
+    finalizarCompraBtn.classList.add("boton-deshabilitado");
+}
+
+function habilitarBotonFinalizarCompra(){
+    let finalizarCompraBtn = document.getElementById('finalizarCompraBtn');
+    finalizarCompraBtn.disabled = false;
+    finalizarCompraBtn.classList.remove("boton-deshabilitado");
+}
+
 function actualizarCarrito(){
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
     let itemsCarrito = document.getElementById("itemsCarrito");
@@ -115,7 +153,10 @@ function actualizarCarrito(){
 
         if (carrito.length === 0) {
             itemsCarrito.innerHTML = "<td>No hay productos en el carrito.</td>";
+
+            deshabilitarBotonFinalizarCompra();
         } else {
+            itemsCarrito.appendChild(crearHeaderTablaCarrito());
             carrito.forEach(item => {
                 let itemCarrito = crearItemCarrito(item);
                 itemsCarrito.appendChild(itemCarrito);
@@ -125,24 +166,64 @@ function actualizarCarrito(){
     actualizarTotalCarrito()
 }
 
+function crearItemCompra(item){
+    let fila = document.createElement("tr");
+    fila.innerHTML = `<td>${item.producto.nombre}</td>
+    <td>(x${item.cantidad})</td>
+    <td></td>
+    <td class="total-card-td">$${parseFloat(item.cantidad) * parseFloat(item.producto.precio)}</td>`;
+
+    return fila;
+}
+
+function crearItemTotalCompra(carrito){
+    let totalCarrito = carrito.reduce((total, item) => total + (item.cantidad * item.producto.precio), 0);
+
+    let fila = document.createElement("tr");
+    fila.innerHTML = `<td colspan="3" class="resaltado">Total</td>
+    <td class="total-card-td resaltado">$${totalCarrito}</td>`;
+
+    return fila;
+}
+
+function cargarDatosCompraDialogo(){
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    let itemsCompra = document.getElementById('itemsFinCompra');
+
+    if(itemsCompra) {
+        itemsCompra.innerHTML = ""; // Limpiar el contenido previo
+
+        if (carrito.length === 0) {
+            itemsCarrito.innerHTML = "<td>No hay productos en el carrito.</td>";
+        } else {
+            
+            carrito.forEach(item => {
+                let itemCompra = crearItemCompra(item);
+                itemsCompra.appendChild(itemCompra);
+            });
+
+            let footerCompra = document.getElementById('footerFinCompra');
+            footerCompra.innerHTML = ""; // Limpiar el contenido previo
+            footerCompra.appendChild(crearItemTotalCompra(carrito));
+        }
+    }
+
+    let campoCompra = document.getElementById("compra");
+    campoCompra.value = JSON.stringify(carrito);
+}
+
 document.addEventListener("DOMContentLoaded", function(){
     actualizarCarrito();
 
     let finalizarCompraBtn = document.getElementById('finalizarCompraBtn');
     finalizarCompraBtn.addEventListener("click", (evento) => {
-        console.log(evento);
-        console.log("mostrar formulario para cargar datos del usuario para la compra");
-
+        cargarDatosCompraDialogo();
         document.getElementById(`finalizarCompraForm`).showModal();
     });
 
     let cancelarConfirmacionBtn = document.getElementById('cancelarConfirmacionBtn');
     cancelarConfirmacionBtn.addEventListener("click", (evento) => {
-        console.log(evento);
-        console.log("cierra formulario para cargar datos del usuario para la compra");
-
         let dialogo = document.getElementById(`finalizarCompraForm`);
-        console.log(dialogo);
         dialogo.close();
     }); 
 });
