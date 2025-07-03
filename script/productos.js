@@ -29,7 +29,7 @@ function getNuevoProducto(producto) {
                                 </div>`;
     
     productoArticle.appendChild(getBotonAgregarProducto(producto));
-
+    producto.imagen = `../${producto.imagen}`;
     productoArticle.appendChild(getDialogProducto(producto));
 
     return productoArticle;
