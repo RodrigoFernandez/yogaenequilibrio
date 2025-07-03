@@ -1,3 +1,7 @@
+/*
+* carrito.js
+*/
+
 function agregarProductoACarrito(producto, cantidad){
     if(cantidad > 0){
         let carrito = JSON.parse(localStorage.getItem("carrito")) || [];

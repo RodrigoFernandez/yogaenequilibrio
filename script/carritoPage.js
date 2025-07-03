@@ -1,4 +1,6 @@
-
+/*
+* carritoPage.js
+*/
 
 function eliminarItemCarrito(itemId){
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];

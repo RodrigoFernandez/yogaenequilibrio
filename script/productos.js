@@ -1,3 +1,6 @@
+/*
+* productos.js
+*/
 
 function getBotonAgregarProducto(producto) {
     let botonAgregar = document.createElement("button");
@@ -44,11 +47,9 @@ function cargarProductos(productos) {
 ///////////////////////////////////////////////////////////
 function inicializacionProductos() {
 // Código a ejecutar cuando el DOM esté completamente cargado
-    let productos = getProductos();
-
-    console.log("Productos:", productos);
-
-    cargarProductos(productos);
+    getProductos((productos) => {
+        cargarProductos(productos);
+    });
 }
 
 document.addEventListener("DOMContentLoaded", inicializacionProductos);

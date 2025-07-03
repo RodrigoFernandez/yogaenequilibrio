@@ -1,136 +1,22 @@
-// yogaenequilibrioApi.js
+/*
+* yogaenequilibrioApi.js
+*/
 
-function getProductos() {
-    rtaProductos = [
-        {
-            "id": 1,
-            "nombre": "Almohadilla Beige",
-            "descripcion": "Descripción de Almohadilla Beige.",
-            "precio": 10.00,
-            "imagen": "img/productos/almohadilla_beige.png",
-            "esNovedad": true,
-            "esDestacado": false
-        },
-        {
-            "id": 2,
-            "nombre": "Almohadilla Celeste",
-            "descripcion": "Descripción de Almohadilla Celeste.",
-            "precio": 20.00,
-            "imagen": "img/productos/almohadilla_celeste.png",
-            "esNovedad": true,
-            "esDestacado": false
-        },
-        {
-            "id": 3,
-            "nombre": "Almohadilla Rosa",
-            "descripcion": "Descripción de Almohadilla Rosa.",
-            "precio": 20.00,
-            "imagen": "img/productos/almohadilla_rosa.png",
-            "esNovedad": false,
-            "esDestacado": false
-        },
-        {
-            "id": 4,
-            "nombre": "Antifaz Gato",
-            "descripcion": "Descripción Antifaz Gato.",
-            "precio": 20.00,
-            "imagen": "img/productos/antifaz_gato.png",
-            "esNovedad": true,
-            "esDestacado": false
-        },
-        {
-            "id": 5,
-            "nombre": "Antifaz Rosa",
-            "descripcion": "Descripción Antifaz Rosa.",
-            "precio": 20.00,
-            "imagen": "img/productos/antifaz_rosa.png",
-            "esNovedad": false,
-            "esDestacado": false
-        },
-        {
-            "id": 6,
-            "nombre": "Cinto fuxia",
-            "descripcion": "Descripción Cinto fuxia.",
-            "precio": 20.00,
-            "imagen": "img/productos/cinto_fuxia.png",
-            "esNovedad": false,
-            "esDestacado": true
-        },
-        {
-            "id": 7,
-            "nombre": "Cinto morado",
-            "descripcion": "Descripción Cinto morado.",
-            "precio": 20.00,
-            "imagen": "img/productos/cinto_morado.png",
-            "esNovedad": false,
-            "esDestacado": false
-        },
-        {
-            "id": 8,
-            "nombre": "Cinto rosa",
-            "descripcion": "Descripción Cinto rosa.",
-            "precio": 20.00,
-            "imagen": "img/productos/cinto_rosa.png",
-            "esNovedad": false,
-            "esDestacado": false
-        },
-        {
-            "id": 9,
-            "nombre": "Cinto verde",
-            "descripcion": "Descripción Cinto verde.",
-            "precio": 20.00,
-            "imagen": "img/productos/cinto_verde.png",
-            "esNovedad": false,
-            "esDestacado": true
-        },
-        {
-            "id": 10,
-            "nombre": "Porta mat mandala",
-            "descripcion": "Descripción Porta mat mandala.",
-            "precio": 20,
-            "imagen": "img/productos/porta_mat_mandala.png",
-            "esNovedad": false,
-            "esDestacado": true
-        },
-        {
-            "id": 11,
-            "nombre": "Porta mat blanco y negro",
-            "descripcion": "Descripción Porta mat blanco y negro.",
-            "precio": 20.00,
-            "imagen": "img/productos/porta_mat_bn.png",
-            "esNovedad": true,
-            "esDestacado": false
-        },
-        {
-            "id": 12,
-            "nombre": "Porta mat luna",
-            "descripcion": "Descripción Porta mat luna.",
-            "precio": 20.00,
-            "imagen": "img/productos/porta_mat_luna.png",
-            "esNovedad": false,
-            "esDestacado": false
-        },
-        {
-            "id": 13,
-            "nombre": "Porta mat ojo",
-            "descripcion": "Descripción Porta mat ojo.",
-            "precio": 20.00,
-            "imagen": "img/productos/porta_mat_ojo.png",
-            "esNovedad": false,
-            "esDestacado": true
-        },
-    ];
+function getProductos(callback) {
 
-    return rtaProductos;
+    fetch('/json/productos.json')
+        .then(response => response.json())
+        .then(data => {
+            callback(data.productos)
+        })
+        .catch(error => console.error("error:", error))
 }
 
-function getNovedades() {
-    let productos = getProductos();
+function getNovedades(productos) {
     return productos.filter(producto => producto.esNovedad);
 
 }
 
-function getDestacados() {
-    let productos = getProductos();
+function getDestacados(productos) {
     return productos.filter(producto => producto.esDestacado);
 }

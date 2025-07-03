@@ -1,3 +1,7 @@
+/*
+* productosDialogo.js
+ */
+
 function agregarACarrito(idProducto) {
     let dialog = document.getElementById(`modal-${idProducto}`);
     let producto = JSON.parse(dialog.getAttribute("data-producto"));

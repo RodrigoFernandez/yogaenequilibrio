@@ -1,3 +1,7 @@
+/*
+* yogaenequilibrio.js
+*/
+
 function getEnlaceNovedadDestacado(producto) {
     let enlace = document.createElement("a");
     enlace.className = "enlace-producto";
@@ -50,11 +54,14 @@ function cargarDestacados(destacados) {
 ///////////////////////////////////////////////////////////
 function inicializacion() {
     // Código a ejecutar cuando el DOM esté completamente cargado
-    let novedades = getNovedades();
-    let destacados = getDestacados();
+    getProductos((productos) => {
+        let novedades = getNovedades(productos);
+        let destacados = getDestacados(productos);
 
-    cargarNovedades(novedades);
-    cargarDestacados(destacados);
+        cargarNovedades(novedades);
+        cargarDestacados(destacados);
+    });
+    
 }
 
 document.addEventListener("DOMContentLoaded", inicializacion);
