@@ -4,7 +4,7 @@
 
 function getProductos(callback) {
 
-    fetch('/json/productos.json')
+    fetch('/yogaenequilibrio/json/productos.json')
         .then(response => response.json())
         .then(data => {
             callback(data.productos)
