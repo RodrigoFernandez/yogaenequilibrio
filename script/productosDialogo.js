@@ -58,7 +58,7 @@ function getImagenCard(producto) {
     let imagenCard = document.createElement("div");
     imagenCard.className = "imagen-card";
     let img = document.createElement("img");
-    img.src = `../${producto.imagen}`;
+    img.src = `/${producto.imagen}`;
     img.alt = producto.nombre;
     imagenCard.appendChild(img);
     return imagenCard;
