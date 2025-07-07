@@ -61,6 +61,7 @@ function actualizarTotalCarrito(){
 
     let precioTotal = document.getElementById("precioTotal");
     precioTotal.innerHTML = `<p>$${totalCarrito}</p>`;
+    actualizarContadorCarrito();
 };
 
 function actualizarTotalItem(evento){

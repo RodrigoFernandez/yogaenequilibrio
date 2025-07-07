@@ -83,6 +83,17 @@ header {
     font-family: var(--fuente-principal);
 }
 
+.contador-carrito {
+    background: var(--color-primario, #e74c3c);
+    color: #fff;
+    border-radius: 50%;
+    padding: 0.2em 0.6em;
+    font-size: 0.9em;
+    margin-left: 0.5em;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
 .principal > h2 {
     text-align: center;
     margin-top: 2em;
