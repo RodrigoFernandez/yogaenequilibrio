@@ -1,6 +1,5 @@
 
 function submitForm(event) {
-    console.log(event);
     event.preventDefault();
     document.getElementById("mensajeErrorEnvio").classList.remove("mensajeVisible");
 
@@ -22,7 +21,6 @@ function submitForm(event) {
             document.getElementById("mensajeErrorEnvio").classList.add("mensajeVisible");
         }
     }).catch(error => {
-        console.error(error);
         document.getElementById("mensajeErrorEnvio").classList.add("mensajeVisible");
     });
 }

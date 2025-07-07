@@ -220,7 +220,7 @@ function submitFormFinalizarCompra(event){
 
     let data = new FormData(event.target);
 
-    fetch(event.target.action,
+    fetch("https://formspree.io/f/mwpbzoyaMal",
         {
             method: event.target.method,
             body: data,
@@ -231,7 +231,7 @@ function submitFormFinalizarCompra(event){
     ).then(response => {
         if (response.ok) {
             event.target.reset(); // Resetea el formulario
-            window.location.href = "../pages/gracias.html"; // Redirige a la página de agradecimiento
+            window.location.href = "../pages/graciasCompra.html"; // Redirige a la página de agradecimiento
         } else {
             document.getElementById("mensajeErrorEnvio").classList.add("mensajeVisible");
         }
