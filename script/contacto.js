@@ -6,7 +6,7 @@ function submitForm(event) {
 
     let data = new FormData(event.target);
 
-    fetch("https://formspree.io/f/mjkwgkovMal",
+    fetch("https://formspree.io/f/mjkwgkov",
         {
             method: event.target.method,
             body: data,
