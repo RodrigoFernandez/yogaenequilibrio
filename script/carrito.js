@@ -4,6 +4,11 @@
 
 function actualizarContadorCarrito() {
     const contador = document.getElementById('contador-carrito');
+    
+    if(contador == null || contador === undefined) {
+        return;
+    }
+
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
     const total = carrito.reduce((acc, prod) => acc + prod.cantidad, 0);
     contador.textContent = total;
