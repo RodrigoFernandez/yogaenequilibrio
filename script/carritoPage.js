@@ -32,7 +32,8 @@ function crearCeldaBotonEliminar(item){
 function crearCeldaImagen(item){
     let celda = document.createElement("td");
     celda.className = "imagen-card";
-    celda.innerHTML = `<img src="../${item.producto.imagen}" alt="${item.producto.nombre}">`;
+    let urlImagen = item.producto.imagen.startsWith("../") ? item.producto.imagen : `../${item.producto.imagen}`;
+    celda.innerHTML = `<img src="${urlImagen}" alt="${item.producto.nombre}">`;
     return celda;
 }
 
