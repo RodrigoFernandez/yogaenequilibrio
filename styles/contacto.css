@@ -49,6 +49,21 @@
     margin-right: 1em;
 }
 
+#mensajeErrorEnvio {
+    display: none;
+    text-align: center;
+    margin-top: 1em;
+}
+
+#mensajeErrorEnvio p {
+    color: red;
+    font-weight: bold;
+}
+
+#mensajeErrorEnvio.mensajeVisible {
+    display: block;
+}
+
 @media (max-width: 48em) {
     .contacto > .contacto-form {
         grid-template-columns: 1fr;

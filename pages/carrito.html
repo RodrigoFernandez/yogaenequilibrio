@@ -70,7 +70,7 @@
                                     </tfoot>
                                 </table>
                             </div>
-                            <form action="https://formspree.io/f/mwpbzoya" method="post">
+                            <form id="finalizarCompraFormulario" action="https://formspree.io/f/mwpbzoya" method="post">
                                 <div class="campos">
                                     <label for="nombre">Nombre:</label>
                                     <input type="text" id="nombre" name="nombre" required>
@@ -83,6 +83,9 @@
                                 <div class="botones">
                                     <button type="submit" class="boton" id="confirmarCompraBtn">Confirmar compra</button>
                                     <button type="button" class="boton" id="cancelarConfirmacionBtn">Cancelar</button>
+                                </div>
+                                <div id="mensajeErrorEnvio" class="mensaje-error">
+                                    <p>Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.</p>
                                 </div>
                             </form>
                         </div>

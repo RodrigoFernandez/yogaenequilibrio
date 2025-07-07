@@ -111,6 +111,21 @@
     margin-top: 0.5rem;
 }
 
+#mensajeErrorEnvio {
+    display: none;
+    text-align: center;
+    margin-top: 1em;
+}
+
+#mensajeErrorEnvio p {
+    color: red;
+    font-weight: bold;
+}
+
+#mensajeErrorEnvio.mensajeVisible {
+    display: block;
+}
+
 @media  (max-width: 48em) {
     .productos-carrito {
         margin-left: 0.2em;
