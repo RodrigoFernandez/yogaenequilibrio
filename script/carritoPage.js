@@ -221,7 +221,7 @@ function submitFormFinalizarCompra(event){
 
     let data = new FormData(event.target);
 
-    fetch("https://formspree.io/f/mwpbzoyaMal",
+    fetch("https://formspree.io/f/mwpbzoya",
         {
             method: event.target.method,
             body: data,
