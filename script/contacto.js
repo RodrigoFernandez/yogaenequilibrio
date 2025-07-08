@@ -27,6 +27,7 @@ function submitForm(event) {
 
 document.addEventListener("DOMContentLoaded", function(){
     const form = document.getElementById("contactoForm");
-
     form.addEventListener("submit", submitForm);
+
+    actualizarContadorCarrito();
 });
