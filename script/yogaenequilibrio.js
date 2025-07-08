@@ -60,6 +60,7 @@ function inicializacion() {
 
         cargarNovedades(novedades);
         cargarDestacados(destacados);
+        actualizarContadorCarrito();
     });
     
 }
