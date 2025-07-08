@@ -49,6 +49,7 @@ function inicializacionProductos() {
 // Código a ejecutar cuando el DOM esté completamente cargado
     getProductos((productos) => {
         cargarProductos(productos);
+        actualizarContadorCarrito();
     });
 }
 
